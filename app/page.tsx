@@ -41,7 +41,7 @@ export default function Home() {
       <BookUploader setFileString={setFileString} />
       <div className="flex flex-col items-center justify-center mt-8">
         <input type="number" placeholder='每页数量' className="w-96 h-12 rounded-md border-2 border-gray-300 px-4" value={pageSize} onChange={(ev) => {
-          setPageSize(ev.target.value)
+          setPageSize(ev.target.value as unknown as number)
           window.localStorage.setItem('pageSize', ev.target.value)
         }} />
       </div>

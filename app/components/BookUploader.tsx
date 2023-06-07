@@ -15,7 +15,7 @@ export const BookUploader = ({ setFileString }: { setFileString: (file: string) 
       setIsLoadFromLocalStorage(true)
       setFileName(fName)
     }
-  }, [])
+  }, [setFileString, setIsLoadFromLocalStorage, setFileName])
 
   return <div>
     {
