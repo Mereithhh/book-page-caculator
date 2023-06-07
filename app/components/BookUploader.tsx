@@ -27,7 +27,8 @@ export const BookUploader = ({ setFileString }: { setFileString: (file: string) 
         const reader = new FileReader()
         reader.readAsText(file, 'UTF-8');
         reader.onload = function (evt) {
-          const fileString = evt.target?.result as string;
+          const fileStringRaw = evt.target?.result as string;
+          const fileString = fileStringRaw.replace(/\n/g, ' ').replace(/\r/g, " ").replace(/　　/g, " ").replace(/ /g, " ");
           // const lines = fileString.split('\n');
           setFileString(fileString)
           setFileName(file.name)
